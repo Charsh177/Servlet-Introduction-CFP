@@ -1,6 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="US-ASCII">
     <title>Login Page</title>
@@ -8,9 +7,15 @@
 <body>
 
 <form action="LoginServlet" method="post">
-    Username: <input type="text" name="user">
+    Username: <label>
+    <input type="text" name="user" required>
+</label>
     <br>
-    Password: <input type="password" name="pwd">
+    <br>
+    Password: <label>
+    <input type="password" name="pwd" required>
+</label>
+    <br>
     <br>
     <input type="submit" value="Login">
 </form>
