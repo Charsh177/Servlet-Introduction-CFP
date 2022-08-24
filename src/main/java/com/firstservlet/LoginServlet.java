@@ -14,12 +14,11 @@ import java.io.PrintWriter;
         description = "Login Servlet Testing",
         urlPatterns = {"/LoginServlet"},
         initParams = {
-                @WebInitParam(name = "user", value = "Harsh"),
+                @WebInitParam(name = "user", value = "Ha"),
                 @WebInitParam(name = "password", value = "@Chougule177")
         }
 )
 public class LoginServlet extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,6 +30,7 @@ public class LoginServlet extends HttpServlet {
         String password = getServletConfig().getInitParameter("password");
 
         String regexName = "^[A-Z]{1}[a-zA-Z]{2,}$";
+        String regexPassword = "^(?=.*[0-9](?=.*[@#$^+=%&])(?=.*[A-Z]){8,}$)";
 
         if (userID.equals(user) && userID.matches(regexName) && password.equals(pwd)) {
             request.setAttribute("user", user);
